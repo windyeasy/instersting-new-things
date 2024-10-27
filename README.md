@@ -24,7 +24,7 @@ pnpm run dev
 pnpm run build
 ```
 
-## commint
+## commit
 
 use: husky + commitlint
 
