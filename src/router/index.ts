@@ -1,3 +1,4 @@
+import { getRoutesConfigByProjects } from '@/utils/projects-utils'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 export default createRouter({
@@ -10,6 +11,7 @@ export default createRouter({
       path: '/home',
       component: () => import('@/views/home/index.vue'),
     },
+    ...getRoutesConfigByProjects(),
   ],
   history: createWebHashHistory(),
 })

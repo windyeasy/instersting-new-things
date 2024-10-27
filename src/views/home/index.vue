@@ -1,28 +1,7 @@
 <script lang="ts" setup>
-const projects = ref([
-  {
-    name: 'vue3-admin-template',
+import { useStorage } from '@vueuse/core'
 
-    link: '/views/projects/001',
-  },
-  {
-    name: 'vue3-admin-template',
-    link: '/views/projects/002',
-  },
-  {
-    name: 'vue3-admin-template',
-    link: '/views/projects/003',
-  },
-  {
-    name: 'vue3-admin-template',
-    link: '/views/projects/004',
-  },
-  {
-    name: 'vue3-admin-template',
-    link: '/views/projects/005',
-  },
-
-])
+const projects = useStorage('routes', [{ name: 'vue3', path: '/vue3' }])
 </script>
 
 <template>
@@ -32,7 +11,7 @@ const projects = ref([
     </div>
     <div class="projects color-[#666]  grid gap-y-1 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 p-t-5">
       <template v-for="(item) in projects" :key="item.link">
-        <router-link :to="item.link" class="mr-4 link">
+        <router-link :to="item.path" class="mr-4 link">
           {{ item.name }}
         </router-link>
       </template>
