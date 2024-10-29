@@ -67,7 +67,7 @@ let frameCount = 0
 function startFrame() {
   requestAnimationFrame(() => {
     frameCount++
-    if (frameCount % 3 === 0)
+    if (frameCount % 6 === 0)
       frame()
     startFrame()
   })
@@ -88,6 +88,9 @@ onMounted(() => {
 <template>
   <div flex justify-center mt-10>
     <canvas ref="el" width="600" height="600" border border-solid border-black />
+  </div>
+  <div class="description text-center mt-4 text-lg">
+    from: <a class="link" href="https://www.bilibili.com/video/BV1ia411b7jY/?spm_id_from=333.999.0.0&vd_source=2e92372410e6a2961ab1498a2164aa7c">antfu bilibili video</a>
   </div>
 </template>
 
