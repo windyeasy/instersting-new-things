@@ -17,7 +17,7 @@ const projects = useStorage('routes', [{ name: 'vue3', path: '/vue3' }])
       </template>
     </div>
     <footer class="footer m-t-5 color-[#666]">
-      from 2024/10/27
+      Windyeasy code practice
     </footer>
   </div>
 </template>
