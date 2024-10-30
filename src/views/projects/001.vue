@@ -79,7 +79,7 @@ onMounted(() => {
 
   step({
     start: { x: WIDTH / 2, y: HEIGHT },
-    legnth: 100,
+    legnth: 20,
     theta: -Math.PI / 2,
   })
 })
