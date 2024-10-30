@@ -30,7 +30,8 @@ export function getRoutesConfigByProjects() {
   }
 
   // cache
-  useStorage('routes', routes)
+  const list = useStorage('routes', routes)
+  list.value = routes
 
   return routes
 }
