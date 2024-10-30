@@ -93,5 +93,3 @@ onMounted(() => {
     from: <a class="link" href="https://www.bilibili.com/video/BV1ia411b7jY/?spm_id_from=333.999.0.0&vd_source=2e92372410e6a2961ab1498a2164aa7c">antfu bilibili video</a>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
