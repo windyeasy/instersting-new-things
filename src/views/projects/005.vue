@@ -12,7 +12,11 @@
         loading
       </div>
     </div>
-    <div class="wrap  m-4 bg-black w-[300px] h-[300px] d-c-c" />
+    <div class="wrap  m-4 bg-black w-[400px] h-[300px]">
+      <div class="load3">
+        loading
+      </div>
+    </div>
     <div class="wrap  m-4 bg-black w-[300px] h-[300px] d-c-c" />
   </div>
 </template>
@@ -65,7 +69,7 @@
 }
 
 .load2 {
-  text-indent: -9999px;
+  font-size: 0;
   position: relative;
   width: 200px;
   height: 200px;
@@ -95,5 +99,39 @@
     content:'';
     top: 14px;
     left: 14px;
+}
+
+.wrap:nth-child(3) {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes load-effect-v2 {
+  0% {
+    box-shadow: 2em 0px 0 0.8em #6FE, 5em  0px 0 -0.1em rgb(102, 255, 138),  7.5em  0px 0 -0.1em rgb(255, 176, 102),  10em  0px 0 -0.3em rgb(255, 102, 245);
+  }
+  25% {
+    box-shadow: 2em 0px 0 -0.1em rgb(102, 255, 138),  5em   0px 0 -0.1em rgb(255, 176, 102),  7.5em   0px 0 -0.3em rgb(255, 102, 245) ,  10em  0px 0 0.5em #6FE;
+  }
+  50% {
+    box-shadow: 2em 0px 0 -0.1em rgb(255, 176, 102),  5em 0px 0 -0.3em rgb(255, 102, 245),  7.5em 0px 0 0.5em #6FE,  10em 0px 0 -0.1em rgb(102, 255, 138);
+  }
+  75% {
+    box-shadow: 2em 0px 0 -0.3em rgb(255, 102, 245),  5em  0px 0 0.5em #6FE, 7.5em 0px 0 -0.1em rgb(102, 255, 138),  10em 0px 0 -0.1em rgb(255, 176, 102);
+  }
+  100% {
+    box-shadow: 2em 0px 0 0.5em #6FE, 5em 0px 0 -0.1em rgb(102, 255, 138) , 7.5em 0px 0 -0.1em rgb(255, 176, 102),  10em 0px 0 -0.3em rgb(255, 102, 245);
+  }
+}
+
+.load3 {
+  text-indent: -9999px;
+  position: relative;
+  font-size: 33px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  box-shadow: 2em  0px 0 0.8em #6FE,  5em  0px 0 -0.1em rgb(102, 255, 138),  7em  0px 0 -0.1em rgb(255, 176, 102),  8.5em  0px 0 -0.3em rgb(255, 102, 245);
+  animation: load-effect-v2 0.98s infinite linear;
 }
 </style>
