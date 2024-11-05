@@ -105,6 +105,7 @@ function checkArea(current: number, move: number, max: number) {
   return value
 }
 
+let timer: NodeJS.Timeout | null = null
 function move() {
   //
   snakeEat()
@@ -127,7 +128,7 @@ function move() {
       break
   }
   checkHeadBody()
-  setTimeout(move, snake.interval)
+  timer = setTimeout(move, snake.interval)
 }
 
 function getInitFood() {
@@ -182,6 +183,11 @@ function init() {
 
 onMounted(() => {
   init()
+})
+
+onUnmounted(() => {
+  if (timer)
+    clearTimeout(timer)
 })
 </script>
 
