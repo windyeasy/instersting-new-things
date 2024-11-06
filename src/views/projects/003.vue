@@ -81,15 +81,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <canvas ref="el" class="canvas" />
+  <div class="w-[100vw] h-[100vh] relative">
+    <canvas ref="el" class="w-full h-full absolute left-0 top-0 bg-black" />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.canvas {
-  position: fixed;
-  inset: 0;
-  background:black;
-}
-</style>
