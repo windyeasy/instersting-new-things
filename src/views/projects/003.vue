@@ -7,7 +7,7 @@ const FONT_SIZE = 16
 
 const ctx = computed(() => el.value!.getContext('2d')!)
 
-function setCanvasSizeByWindySize() {
+function setCanvasSizeByWindowSize() {
   width.value = window.innerWidth
   height.value = window.innerHeight
 
@@ -71,7 +71,7 @@ function animate() {
   requestAnimationFrame(animate)
 }
 function init() {
-  setCanvasSizeByWindySize()
+  setCanvasSizeByWindowSize()
   animate()
 }
 
