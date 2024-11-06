@@ -36,6 +36,7 @@
   box-shadow: inset 0 0 0 14px #6FE;
   border-radius: 50%;
 }
+
 @keyframes load-effect {
     0% {
         transform: rotate(0deg);
@@ -50,7 +51,6 @@
   content: "";
   width: 100px;
   height: 200px;
-  background: #000;
   border-radius: 0 200px 200px 0;
   left: 100px;
   background: black;
@@ -65,7 +65,7 @@
   height: 200px;
   border-radius: 50%;
   left: 0;
-  box-shadow: inset 0 0 0 14px rgba(255,255,255,.3);
+  box-shadow: inset 0 0 0 14px rgb(255 255 255 / 30%);
 }
 
 .load2 {
@@ -73,18 +73,17 @@
   position: relative;
   width: 200px;
   height: 200px;
-  box-shadow: inset 0 0 0 14px rgba(255,255,255, .3);
+  box-shadow: inset 0 0 0 14px rgb(255 255 255 / 30%);
   border-radius: 50%;
-  background: linear-gradient(to left,#fff 11%,rgba(255,255,255,0) 50%);
+  background: linear-gradient(to left,#fff 11%,rgb(255 255 255 / 0%) 50%);
   animation: load-effect 2s infinite;
 }
 
 .load2::before{
     position: absolute;
-    background: #000;
     width: 100px;
     height: 100px;
-    border-radius: 0 0 100px 0;
+    border-radius: 0 0 100px;
     content:'';
     top: 50%;
     left: 50%;
@@ -108,19 +107,19 @@
 
 @keyframes load-effect-v2 {
   0% {
-    box-shadow: 2em 0px 0 0.8em #6FE, 5em  0px 0 -0.1em rgb(102, 255, 138),  7.5em  0px 0 -0.1em rgb(255, 176, 102),  10em  0px 0 -0.3em rgb(255, 102, 245);
+    box-shadow: 2em 0 0 0.8em #6FE, 5em  0 0 -0.1em rgb(102 255 138),  7.5em  0 0 -0.1em rgb(255 176 102),  10em  0 0 -0.3em rgb(255 102 245);
   }
   25% {
-    box-shadow: 2em 0px 0 -0.1em rgb(102, 255, 138),  5em   0px 0 -0.1em rgb(255, 176, 102),  7.5em   0px 0 -0.3em rgb(255, 102, 245) ,  10em  0px 0 0.5em #6FE;
+    box-shadow: 2em 0 0 -0.1em rgb(102 255 138),  5em   0 0 -0.1em rgb(255 176 102),  7.5em   0 0 -0.3em rgb(255 102 245) ,  10em  0 0 0.5em #6FE;
   }
   50% {
-    box-shadow: 2em 0px 0 -0.1em rgb(255, 176, 102),  5em 0px 0 -0.3em rgb(255, 102, 245),  7.5em 0px 0 0.5em #6FE,  10em 0px 0 -0.1em rgb(102, 255, 138);
+    box-shadow: 2em 0 0 -0.1em rgb(255 176 102),  5em 0 0 -0.3em rgb(255 102 245),  7.5em 0 0 0.5em #6FE,  10em 0 0 -0.1em rgb(102 255 138);
   }
   75% {
-    box-shadow: 2em 0px 0 -0.3em rgb(255, 102, 245),  5em  0px 0 0.5em #6FE, 7.5em 0px 0 -0.1em rgb(102, 255, 138),  10em 0px 0 -0.1em rgb(255, 176, 102);
+    box-shadow: 2em 0 0 -0.3em rgb(255 102 245),  5em  0 0 0.5em #6FE, 7.5em 0 0 -0.1em rgb(102 255 138),  10em 0 0 -0.1em rgb(255 176 102);
   }
   100% {
-    box-shadow: 2em 0px 0 0.5em #6FE, 5em 0px 0 -0.1em rgb(102, 255, 138) , 7.5em 0px 0 -0.1em rgb(255, 176, 102),  10em 0px 0 -0.3em rgb(255, 102, 245);
+    box-shadow: 2em 0 0 0.5em #6FE, 5em 0 0 -0.1em rgb(102 255 138) , 7.5em 0 0 -0.1em rgb(255 176 102),  10em 0 0 -0.3em rgb(255 102 245);
   }
 }
 
@@ -131,7 +130,7 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  box-shadow: 2em  0px 0 0.8em #6FE,  5em  0px 0 -0.1em rgb(102, 255, 138),  7em  0px 0 -0.1em rgb(255, 176, 102),  8.5em  0px 0 -0.3em rgb(255, 102, 245);
+  box-shadow: 2em  0 0 0.8em #6FE,  5em  0 0 -0.1em rgb(102 255 138),  7em  0 0 -0.1em rgb(255 176 102),  8.5em  0 0 -0.3em rgb(255 102 245);
   animation: load-effect-v2 0.98s infinite linear;
 }
 </style>

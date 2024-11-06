@@ -89,10 +89,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .canvas {
   position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   background:black;
 }
 </style>
