@@ -17,7 +17,11 @@
         loading
       </div>
     </div>
-    <div class="wrap  m-4 bg-black w-[300px] h-[300px] d-c-c" />
+    <div class="wrap  m-4 bg-black w-[300px] h-[300px] d-c-c">
+      <div class="load4">
+        loading
+      </div>
+    </div>
   </div>
 </template>
 
@@ -130,7 +134,6 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  box-shadow: 2em  0 0 0.8em #6FE,  5em  0 0 -0.1em rgb(102 255 138),  7em  0 0 -0.1em rgb(255 176 102),  8.5em  0 0 -0.3em rgb(255 102 245);
   animation: load-effect-v2 0.98s infinite linear;
 }
 </style>
