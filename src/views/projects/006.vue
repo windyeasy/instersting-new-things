@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const text = ref('')
-const content = 'Hello, World!'
+const content = 'Hello, World!\n\n  Hello Hello Hello Hello Hello Hello Hello Hello!'
 const DELAY = 200
 
 let timer: null | NodeJS.Timeout = null
@@ -25,8 +25,12 @@ onMounted(() => {
 
 <template>
   <div>
-    {{ text }}
+    <pre class="pre-content" c-red>
+      {{ text }}_
+    </pre>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
