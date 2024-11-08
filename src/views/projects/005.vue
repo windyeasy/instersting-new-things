@@ -17,11 +17,6 @@
         loading
       </div>
     </div>
-    <div class="wrap  m-4 bg-black w-[300px] h-[300px] d-c-c">
-      <div class="load4">
-        loading
-      </div>
-    </div>
   </div>
 </template>
 
