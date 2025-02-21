@@ -4,11 +4,11 @@ const INTERVAL = 75
 
 let timer: null | NodeJS.Timeout = null
 
-function typewriter() {
+function typewriter(el: Element, delay: number) {
   let progress = 0
 
-  const str = textRef.value!.innerHTML!
-  textRef.value!.innerHTML = ''
+  const str = el.innerHTML!
+  el.innerHTML = ''
   function run() {
     const current = str.slice(progress, progress + 1)
 
@@ -20,7 +20,7 @@ function typewriter() {
     }
 
     const content = `${str.slice(0, progress)}_`
-    textRef.value!.innerHTML = content
+    el.innerHTML = content
 
     if (progress >= str.length) {
       timer && clearInterval(timer)
@@ -29,11 +29,11 @@ function typewriter() {
 
   timer = setInterval(() => {
     run()
-  }, INTERVAL)
+  }, delay)
 }
 
 onMounted(() => {
-  typewriter()
+  typewriter(textRef.value!, INTERVAL)
 })
 </script>
 
