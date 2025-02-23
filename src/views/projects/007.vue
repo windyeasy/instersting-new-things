@@ -13,7 +13,6 @@ function exec(ctx: CanvasRenderingContext2D) {
     end: Point
   }
 
-  // 画线连起来的三角形
   function drawLine(l: Line) {
     ctx.beginPath()
     ctx.moveTo(l.start.x, l.start.y)
@@ -21,34 +20,48 @@ function exec(ctx: CanvasRenderingContext2D) {
     // Draw the Path
     ctx.stroke()
   }
-  const startLine = {
+
+  // 画线连起来的三角形, 实现一等边三角，给一个起点和一个长度
+  interface Triangle {
+    start: Point
+    length: number
+  }
+
+  function drawTriangle(t: Triangle) {
+    const { start, length } = t
+
+    const l1: Line = {
+      start: t.start,
+      end: {
+        x: start.x + length,
+        y: start.y,
+      },
+    }
+
+    const l2: Line = {
+      start: l1.end,
+      end: {
+        x: start.x + length / 2,
+        y: Math.sqrt(length ** 2 - (length / 2) ** 2) + t.start.y,
+      },
+    }
+
+    drawLine(l1)
+    drawLine(l2)
+    const l3: Line = {
+      start: l2.end,
+      end: l1.start,
+    }
+    drawLine(l3)
+  }
+
+  drawTriangle({
     start: {
       x: 100,
       y: 100,
     },
-    end: {
-      x: 100,
-      y: 200,
-    },
-  }
-
-  drawLine(startLine)
-  const twoLine = {
-    start: startLine.end,
-    end: {
-      ...startLine.end,
-      x: startLine.end.x + 100,
-    },
-  }
-
-  drawLine(twoLine)
-
-  const endLine = {
-    start: twoLine.end,
-    end: startLine.start,
-  }
-
-  drawLine(endLine)
+    length: 200,
+  })
 }
 
 onMounted(() => {
