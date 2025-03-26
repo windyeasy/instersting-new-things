@@ -13,7 +13,7 @@ interface Point {
 
 interface Branch {
   start: Point
-  legnth: number
+  length: number
   theta: number
 }
 function lineTo(p1: Point, p2: Point) {
@@ -25,8 +25,8 @@ function lineTo(p1: Point, p2: Point) {
 
 function getEndPoint(b: Branch) {
   return {
-    x: b.start.x + b.legnth * Math.cos(b.theta),
-    y: b.start.y + b.legnth * Math.sin(b.theta),
+    x: b.start.x + b.length * Math.cos(b.theta),
+    y: b.start.y + b.length * Math.sin(b.theta),
   }
 }
 function drawBranch(b: Branch) {
@@ -39,21 +39,19 @@ function step(b: Branch, depth = 4) {
   drawBranch(b)
 
   if (depth > 0 || Math.random() < 0.5) {
-    depth--
     pendingTasks.push(() => step({
       start: end,
-      legnth: b.legnth + Math.random() * 10 - 5,
-      theta: b.theta + 0.2,
-    }, depth))
+      length: b.length + Math.random() * 2 - 1,
+      theta: b.theta + 0.2 * Math.random(),
+    }, depth - 1))
   }
 
   if (depth > 0 || Math.random() < 0.5) {
-    depth--
     pendingTasks.push(() => step({
       start: end,
-      legnth: b.legnth + Math.random() * 10 - 5,
-      theta: b.theta - 0.2,
-    }, depth))
+      length: b.length + Math.random() * 2 - 1,
+      theta: b.theta - 0.2 * Math.random(),
+    }, depth - 1))
   }
 }
 
@@ -79,7 +77,7 @@ onMounted(() => {
 
   step({
     start: { x: WIDTH / 2, y: HEIGHT },
-    legnth: 20,
+    length: 20,
     theta: -Math.PI / 2,
   })
 })
