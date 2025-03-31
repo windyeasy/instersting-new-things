@@ -212,7 +212,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div w-300px h-300px bg-black rounded-40px>
+  <div w-300px h-300px bg-black rounded-30px>
     <canvas ref="el" width="300" height="300" />
   </div>
 </template>
